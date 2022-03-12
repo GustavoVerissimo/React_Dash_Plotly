@@ -1,0 +1,11 @@
+include primeiro_componente/primeiro_componente.min.js
+include primeiro_componente/primeiro_componente.min.js.map
+include primeiro_componente/async-*.js
+include primeiro_componente/async-*.js.map
+include primeiro_componente/*-shared.js
+include primeiro_componente/*-shared.js.map
+include primeiro_componente/metadata.json
+include primeiro_componente/package-info.json
+include README.md
+include LICENSE
+include package.json
