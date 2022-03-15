@@ -8,16 +8,15 @@ app = dash.Dash(__name__)
 app.layout = html.Div([
     primeiro_componente.PrimeiroComponente(
         id='input',
-        value='my-value',
-        label='my-label'
+        myDiv='id-myDiv'
     ),
     html.Div(id='output')
 ])
 
 
 @app.callback(Output('output', 'children'), [Input('input', 'value')])
-def display_output(value):
-    return 'You have entered {}'.format(value)
+def display_output():
+    return
 
 
 if __name__ == '__main__':

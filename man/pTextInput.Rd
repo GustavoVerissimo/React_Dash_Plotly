@@ -1,22 +1,26 @@
 % Auto-generated: do not edit by hand
-\name{pPrimeiroComponente}
+\name{pTextInput}
 
-\alias{pPrimeiroComponente}
+\alias{pTextInput}
 
-\title{PrimeiroComponente component}
+\title{TextInput component}
 
 \description{
 
 }
 
 \usage{
-pPrimeiroComponente(id=NULL, myDiv=NULL)
+pTextInput(id=NULL, label=NULL, p=NULL, value=NULL)
 }
 
 \arguments{
 \item{id}{Character. }
 
-\item{myDiv}{Character. }
+\item{label}{Character. }
+
+\item{p}{Character. }
+
+\item{value}{Character. }
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

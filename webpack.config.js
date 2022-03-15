@@ -79,6 +79,12 @@ module.exports = (env, argv) => {
                         },
                     ],
                 },
+                {
+                    test: /\.js$/,
+                    loader: 'ify-loader',
+                    enforce: 'post'
+                  
+                }
             ],
         },
         optimization: {

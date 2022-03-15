@@ -24,6 +24,7 @@
   "author": "GustavoVerissimo <gustavo.monteiro.6@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "ify-loader": "^1.1.0",
     "interactjs": "^1.10.11",
     "plotly.js-dist-min": "^2.10.1",
     "ramda": "^0.26.1"

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class TextInput extends Component {
+export default class TextInput extends Component {
   // here we'll define everything we need our TextInput component to have
   constructor(props){
       super(props);
@@ -38,7 +38,6 @@ class TextInput extends Component {
   }
 }
 
-export default TextInput 
 
 TextInput.defaultProps={};
 

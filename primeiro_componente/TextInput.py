@@ -3,22 +3,26 @@
 from dash.development.base_component import Component, _explicitize_args
 
 
-class PrimeiroComponente(Component):
-    """A PrimeiroComponente component.
+class TextInput(Component):
+    """A TextInput component.
 
 
 Keyword arguments:
 
 - id (string; optional)
 
-- myDiv (string; optional)"""
+- label (string; optional)
+
+- p (string; optional)
+
+- value (string; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, myDiv=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'myDiv']
-        self._type = 'PrimeiroComponente'
+    def __init__(self, id=Component.UNDEFINED, label=Component.UNDEFINED, p=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'label', 'p', 'value']
+        self._type = 'TextInput'
         self._namespace = 'primeiro_componente'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'myDiv']
+        self.available_properties = ['id', 'label', 'p', 'value']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -28,4 +32,4 @@ Keyword arguments:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(PrimeiroComponente, self).__init__(**args)
+        super(TextInput, self).__init__(**args)

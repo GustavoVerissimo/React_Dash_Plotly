@@ -1,61 +1,87 @@
-import React, {Component} from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import interact from 'interactjs';
+import Plotly from 'plotly.js-dist-min';
 
-/**
- * ExampleComponent is an example component.
- * It takes a property, `label`, and
- * displays it.
- * It renders an input with the property `value`
- * which is editable by the user.
- */
-export default class PrimeiroComponente extends Component {
-    render() {
-        const {id, label, setProps, value} = this.props;
 
-        return (
-            <div id={id}>
-                ExampleComponent: {label}&nbsp;
-                <input
-                    value={value}
-                    onChange={
-                        /*
-                         * Send the new value to the parent component.
-                         * setProps is a prop that is automatically supplied
-                         * by dash's front-end ("dash-renderer").
-                         * In a Dash app, this will update the component's
-                         * props and send the data back to the Python Dash
-                         * app server if a callback uses the modified prop as
-                         * Input or State.
-                         */
-                        e => setProps({ value: e.target.value })
-                    }
-                />
-            </div>
-        );
+
+interact('.draggable')
+  .draggable({
+    inertia: true,
+    modifiers: [
+      interact.modifiers.restrictRect({
+        restriction: 'parent',
+        endOnly: true
+      })
+    ],
+    autoScroll: true,
+
+    listeners: {
+      move: dragMoveListener,
+
+      end(event) {
+        var textEl = event.target.querySelector('p')
+
+        textEl && (textEl.textContent =
+          'moved a distance of ' +
+          (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+            Math.pow(event.pageY - event.y0, 2) | 0))
+            .toFixed(2) + 'px')
+      }
     }
+  })
+
+function dragMoveListener(event) {
+  var target = event.target
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+  target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
 }
+
+window.dragMoveListener = dragMoveListener
+
+
+export default function PrimeiroComponente(props) {
+  const { id, myDiv} = props;
+ 
+  useEffect(() => {
+    var data = [{
+      values: [19, 26, 55],
+      labels: ['Residential', 'Non-Residential', 'Utility'],
+      type: 'pie'
+    }];
+    
+    var layout = {
+      height: 400,
+      width: 500
+    };
+    
+    let nyDiv = document.getElementById('id-myDiv')
+    Plotly.newPlot(nyDiv, data, layout);
+  })
+
+  return (
+    <div id={id}>
+      <div id={myDiv} className="draggable"></div>
+    </div>
+
+  );
+}
+
+
+
+
 
 PrimeiroComponente.defaultProps = {};
 
 PrimeiroComponente.propTypes = {
-    /**
-     * The ID used to identify this component in Dash callbacks.
-     */
-    id: PropTypes.string,
+  id: PropTypes.string,
 
-    /**
-     * A label that will be printed when this component is rendered.
-     */
-    label: PropTypes.string.isRequired,
+  myDiv: PropTypes.string,
 
-    /**
-     * The value displayed in the input.
-     */
-    value: PropTypes.string,
-
-    /**
-     * Dash-assigned callback that should be called to report property changes
-     * to Dash, to make them available for callbacks.
-     */
-    setProps: PropTypes.func
-};
+  
+}

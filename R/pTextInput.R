@@ -1,17 +1,17 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-pPrimeiroComponente <- function(id=NULL, myDiv=NULL) {
+pTextInput <- function(id=NULL, label=NULL, p=NULL, value=NULL) {
     
-    props <- list(id=id, myDiv=myDiv)
+    props <- list(id=id, label=label, p=p, value=value)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
     component <- list(
         props = props,
-        type = 'PrimeiroComponente',
+        type = 'TextInput',
         namespace = 'primeiro_componente',
-        propNames = c('id', 'myDiv'),
+        propNames = c('id', 'label', 'p', 'value'),
         package = 'primeiroComponente'
         )
 
