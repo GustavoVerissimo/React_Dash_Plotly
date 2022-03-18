@@ -8,11 +8,10 @@ export pc_primeirocomponente
 A PrimeiroComponente component.
 
 Keyword arguments:
-- `id` (String; optional)
 - `myDiv` (String; optional)
 """
 function pc_primeirocomponente(; kwargs...)
-        available_props = Symbol[:id, :myDiv]
+        available_props = Symbol[:myDiv]
         wild_props = Symbol[]
         return Component("pc_primeirocomponente", "PrimeiroComponente", "primeiro_componente", available_props, wild_props; kwargs...)
 end

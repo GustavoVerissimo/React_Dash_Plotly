@@ -7,8 +7,7 @@ app = dash.Dash(__name__)
 
 app.layout = html.Div([
     primeiro_componente.PrimeiroComponente(
-        id='input',
-        myDiv='id-myDiv'
+        myDiv='input'
     ),
     html.Div(id='output')
 ])
@@ -16,7 +15,7 @@ app.layout = html.Div([
 
 @app.callback(Output('output', 'children'), [Input('input', 'value')])
 def display_output():
-    return
+    return 
 
 
 if __name__ == '__main__':

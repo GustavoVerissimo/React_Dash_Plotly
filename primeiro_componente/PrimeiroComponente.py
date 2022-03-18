@@ -9,16 +9,14 @@ class PrimeiroComponente(Component):
 
 Keyword arguments:
 
-- id (string; optional)
-
 - myDiv (string; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, myDiv=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'myDiv']
+    def __init__(self, myDiv=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['myDiv']
         self._type = 'PrimeiroComponente'
         self._namespace = 'primeiro_componente'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'myDiv']
+        self.available_properties = ['myDiv']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

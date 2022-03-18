@@ -10,12 +10,10 @@
 }
 
 \usage{
-pPrimeiroComponente(id=NULL, myDiv=NULL)
+pPrimeiroComponente(myDiv=NULL)
 }
 
 \arguments{
-\item{id}{Character. }
-
 \item{myDiv}{Character. }
 }
 

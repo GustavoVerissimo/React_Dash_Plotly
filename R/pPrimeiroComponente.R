@@ -1,9 +1,9 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-pPrimeiroComponente <- function(id=NULL, myDiv=NULL) {
+pPrimeiroComponente <- function(myDiv=NULL) {
     
-    props <- list(id=id, myDiv=myDiv)
+    props <- list(myDiv=myDiv)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -11,7 +11,7 @@ pPrimeiroComponente <- function(id=NULL, myDiv=NULL) {
         props = props,
         type = 'PrimeiroComponente',
         namespace = 'primeiro_componente',
-        propNames = c('id', 'myDiv'),
+        propNames = c('myDiv'),
         package = 'primeiroComponente'
         )
 

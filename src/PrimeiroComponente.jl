@@ -6,7 +6,6 @@ const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
 const version = "0.0.1"
 
 include("jl/pc_primeirocomponente.jl")
-include("jl/pc_textinput.jl")
 
 function __init__()
     DashBase.register_package(

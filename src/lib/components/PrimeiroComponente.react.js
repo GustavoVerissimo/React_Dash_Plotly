@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import interact from 'interactjs';
 import Plotly from 'plotly.js-dist-min';
 
-
-
 interact('.draggable')
   .draggable({
     inertia: true,
@@ -46,7 +44,7 @@ window.dragMoveListener = dragMoveListener
 
 
 export default function PrimeiroComponente(props) {
-  const { id, myDiv} = props;
+  const {myDiv} = props;
  
   useEffect(() => {
     var data = [{
@@ -60,27 +58,21 @@ export default function PrimeiroComponente(props) {
       width: 500
     };
     
-    let nyDiv = document.getElementById('id-myDiv')
+    let nyDiv = document.getElementById('input')
     Plotly.newPlot(nyDiv, data, layout);
   })
 
   return (
-    <div id={id}>
       <div id={myDiv} className="draggable"></div>
-    </div>
 
   );
 }
 
 
-
-
-
 PrimeiroComponente.defaultProps = {};
 
 PrimeiroComponente.propTypes = {
-  id: PropTypes.string,
-
+  
   myDiv: PropTypes.string,
 
   

@@ -4,62 +4,7 @@
     "displayName": "PrimeiroComponente",
     "methods": [],
     "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
       "myDiv": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      }
-    }
-  },
-  "src/lib/components/TextInput.react.js": {
-    "description": "",
-    "displayName": "TextInput",
-    "methods": [
-      {
-        "name": "handleInputChange",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "e",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "label": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "p": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "value": {
         "type": {
           "name": "string"
         },
