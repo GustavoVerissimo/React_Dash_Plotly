@@ -1,6 +1,6 @@
-# primeiro componente
+# Componente Dash
 
-primeiro componente is a Dash component library.
+Componente Dash is a Dash component library.
 
 Get started with:
 1. Install Dash and its dependencies: https://dash.plotly.com/installation
